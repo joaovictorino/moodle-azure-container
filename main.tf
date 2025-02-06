@@ -7,11 +7,23 @@ terraform {
       version = ">= 2.26"
     }
   }
+
+  backend "azurerm" {
+    resource_group_name  = "rg-moodle-experimentacao"
+    storage_account_name = "saterraformstatemoodle"
+    container_name       = "tfstate"
+    key                  = "terraform.tfstate"
+    # access_key = "your-storage-account-access-key"
+  }
 }
 
 provider "azurerm" {
   features {}
-  subscription_id = "506f92c4-471f-4f5f-8b5c-9ff96ad5ce8c"
+  subscription_id = var.subscription_id
+}
+
+variable "subscription_id" {
+  type = string
 }
 
 data "azurerm_resource_group" "rg-moodle-experimentacao" {

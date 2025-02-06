@@ -20,3 +20,5 @@ override.tf.json
 # Ignore files from provider plugins
 .terraform.lock.hcl
 
+# variables 
+terraform.tfvars
