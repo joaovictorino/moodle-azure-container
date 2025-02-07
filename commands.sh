@@ -12,4 +12,4 @@ terraform apply
 terraform destroy --target azurerm_container_app.moodle-job
 
 # Recreate site when necessary
-terraform destroy --target azurerm_container_app.moodle-app
+terraform destroy --target azurerm_container_app.moodle

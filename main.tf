@@ -348,8 +348,6 @@ resource "azurerm_container_app" "moodle" {
       latest_revision = true
     }
   }
-
-  depends_on = [azurerm_container_app.moodle-job]
 }
 
 output "moodle_url" {
